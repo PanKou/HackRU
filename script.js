@@ -112,6 +112,11 @@ function collobs(x, y, w, h){
       if(player_y === y - h){
         ground = true;
       }
+     else{
+      if(player_y < 540){
+        ground = false;
+      }
+     }
     }
 
 function draw() {
