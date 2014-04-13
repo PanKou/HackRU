@@ -112,6 +112,15 @@ function draw() {
     context.translate(player_x, player_y);
     context.drawImage(player_image, 0, -115);
     context.restore();
+    
+    if (screen <=0){
+    context.font = "24px Arial";
+    context.fillStyle = "rgba(255, 255, 255, 0.8)";
+    context.fillText("Go right!", 400, 300);
+    }
+    if (screen > 0){
+    
+    }
 }
  
 function run() {
