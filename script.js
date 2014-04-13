@@ -12,6 +12,7 @@ var moveright = false;
 var moveleft = false;
 var jump = false;
 var ground = true;
+var screen = 0;
  
 function scaninput(e) {
     if (window.event) {
@@ -83,6 +84,14 @@ var update = function () {
     }
     if (player_y === 540) {
         ground = true;
+    }
+    if (player_x > 800){
+        player_x = 0;
+        screen++;
+    }
+    if (player_x < 0){
+        player_x = 800;
+        screen--;
     }
 };
  
