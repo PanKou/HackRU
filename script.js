@@ -15,6 +15,7 @@ var moveleft = false;
 var jump = false;
 var ground = true;
 var screen = 0;
+var coincon = false;
  
 function scaninput(e) {
     if (window.event) {
@@ -124,6 +125,12 @@ function collobs(x, y, w, h){
   }
 }
 
+function coin(x, y, w, h){
+  if(player_x > x - player_w && player_x < (x+w)){
+    coincon = true;
+    alert("Thanks for testing out my broken physics engine!");
+  }
+}
 function draw() {
     var c = document.getElementById("canvas");
     var context = c.getContext("2d");
@@ -171,6 +178,22 @@ function draw() {
         collobs(300, 400, 300, 50);
         context.fillRect(350, 350, 250, 50);
         collobs(350, 350, 250, 50);
+        break;
+       case 3:
+        context.fillStyle = "#000000";
+        context.fillRect(500, 300, 100, 700);
+        collobs(500, 300, 100, 700);
+        if(!coincon){
+          context.font = "24px Arial";
+          context.fillStyle = "rgba(255, 255, 255, 0.8)";
+          context.fillText("Climb the tower to grab the coin!", 300, 300);
+    
+          context.fillStyle = "#ffff00";
+          context.fillRect(525, 200, 50, 50);
+          coin(525, 200, 50, 50);
+        break;
+        }
+        
         break;
     }
 
