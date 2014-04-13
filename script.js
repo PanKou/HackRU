@@ -167,6 +167,10 @@ function draw() {
         collobs(200, 500, 400, 40);
         context.fillRect(250, 450, 350, 50);
         collobs(250, 450, 350, 50);
+        context.fillRect(300, 400, 300, 50);
+        collobs(300, 400, 300, 50);
+        context.fillRect(350, 350, 250, 50);
+        collobs(350, 350, 250, 50);
         break;
     }
 
