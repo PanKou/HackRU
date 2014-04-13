@@ -118,11 +118,30 @@ function draw() {
     context.fillStyle = "rgba(255, 255, 255, 0.8)";
     context.fillText("Wrong Way! Go right!", 300, 300);
     screen = -1;
-    }
-    if (screen === 0){
+    }    if (screen === 0){
+
     context.font = "24px Arial";
     context.fillStyle = "rgba(255, 255, 255, 0.8)";
     context.fillText("Go right!", 300, 300);
+    }
+    switch (screen) {
+      case 1:
+        context.fillStyle = "#000000";
+        context.fillRect(200, 500, 400, 50);
+        if(player_x > 100 && player_x < 400 && player_y > 500-115){
+          console.log("collision");
+          if(player_xvel > 0){
+            player_x = 100;
+          }
+          if(player_xvel < 0){
+            player_x = 400;
+          }
+          if(player_yvel > 0){
+            player_y = 500-115;
+            ground = true;
+          }
+        }
+        break;
     }
 
 }
