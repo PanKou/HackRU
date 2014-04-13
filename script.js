@@ -108,7 +108,7 @@ function draw() {
 function run() {
     update();
     draw();
-    console.log("x,y" + player_x + ", " + player_y + " xvel:" + player_xvel + " yvel:" + player_yvel + "ground? " + ground);
+//    console.log("x,y" + player_x + ", " + player_y + " xvel:" + player_xvel + " yvel:" + player_yvel + "ground? " + ground);
 }
  
 _intervalId = setInterval(run, 10000 / fps);
