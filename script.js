@@ -101,7 +101,7 @@ function collobs(x, y, w, h){
     
     if(!(player_x < x -player_w || player_x > (x+w))){
       if(player_y > y - h){
-        player_y = y - player_h;
+        player_y = y;
         ground = true;
       }
       if(player_y < y - h){
