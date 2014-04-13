@@ -95,6 +95,9 @@ var update = function () {
         player_x = 800;
         screen--;
     }
+    if (player_y != 540){
+      ground = false;
+    }
 };
 
 function collobs(x, y, w, h){
@@ -113,10 +116,12 @@ function collobs(x, y, w, h){
         ground = true;
       }
      else{
-      if(player_y < 540 && player_y + h === y){
+      if(player_y < 540){
+        if(player_y + h === y){
         ground = false;
-      }
-     }
+        }
+    }
+  }
 }
 
 function draw() {
