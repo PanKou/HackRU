@@ -99,7 +99,7 @@ var update = function () {
 
 function collobs(x, y, w, h){
     
-    if(!(player_x < x -player_w || player_x > (x+w))){
+    if(player_x > x -player_w && player_x < (x+w)){
         if (player_y > y) {
         player_y = y;
         player_yvel = 0;
@@ -113,11 +113,11 @@ function collobs(x, y, w, h){
         ground = true;
       }
      else{
-      if(player_y < 540){
+      if(player_y < 540 && player_y + h === y){
         ground = false;
       }
      }
-    }
+}
 
 function draw() {
     var c = document.getElementById("canvas");
@@ -153,6 +153,8 @@ function draw() {
         context.fillStyle = "#000000";
         context.fillRect(200, 500, 400, 40);
         collobs(200, 500, 400, 40);
+        context.fillRect(250, 450, 100, 50);
+        collobs(250, 450, 100, 50);
         break;
     }
 
