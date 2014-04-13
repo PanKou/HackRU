@@ -158,7 +158,7 @@ function draw() {
 
     context.font = "24px Arial";
     context.fillStyle = "rgba(255, 255, 255, 0.8)";
-    context.fillText("Welcome to Broken Physics Engine! Use the arrow keys to go right!", 300, 300);
+    context.fillText("Use the arrow keys to go right!", 300, 300);
     }
     switch (screen) {
       case 1:
