@@ -99,19 +99,19 @@ var update = function () {
 
 function collobs(x, y, w, h){
     
-    if (player_x > x - player_w && player_x < (x+w - player_w) && player_y > h - player_h){
-      if (player_xvel > 0){
-        player_x = x - player_w;
+    if(!(player_x < x -player_w || player_x > (x+w))){
+      if(player_y > y - h){
+        player_y = y - player_h;
+        ground = true;
       }
-      if (player_xvel < 0){
-        player_x = x + w;
+      if(player_y < y - h){
+        ground = false;
       }
-      if (player_yvel > 0){
-        player_y = y;
+      if(player_y === y - h){
         ground = true;
       }
     }
-}
+ }
 
 function draw() {
     var c = document.getElementById("canvas");
