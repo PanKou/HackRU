@@ -57,15 +57,12 @@ function stopmove(e) {
 var update = function () {
  
     if (moveright) {
-        player_xvel = 100
-    }
-    if (!moveright) {
-        player_xvel = 0
+        player_xvel = 200
     }
     if (moveleft) {
-        player_xvel = -100
+        player_xvel = -200
     }
-    if (!moveleft) {
+    if (!moveleft && !moveright) {
         player_xvel = 0
     }
     if (jump && ground) {
