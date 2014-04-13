@@ -8,6 +8,8 @@ player_xvel = 0;
 player_yvel = 0;
 player_x = 0;
 player_y = 540;
+player_w = 37;
+player_h = 92;
 var moveright = false;
 var moveleft = false;
 var jump = false;
@@ -77,7 +79,7 @@ var update = function () {
     if (player_y > 540) {
         player_y = 540;
         player_yvel = 0;
-        grounded = true;
+        ground = true;
     }
     if (jump) {
         ground = false;
@@ -94,7 +96,23 @@ var update = function () {
         screen--;
     }
 };
- 
+
+function collobs(x, y, w, h){
+    
+    if (player_x > x - player_w && player_x < (x+w - player_w) && player_y > h - player_h){
+      if (player_xvel > 0){
+        player_x = x - player_w;
+      }
+      if (player_xvel < 0){
+        player_x = x + w;
+      }
+      if (player_yvel > 0){
+        player_y = y;
+        ground = true;
+      }
+    }
+}
+
 function draw() {
     var c = document.getElementById("canvas");
     var context = c.getContext("2d");
@@ -110,7 +128,7 @@ function draw() {
     //Draw player
     context.save();
     context.translate(player_x, player_y);
-    context.drawImage(player_image, 0, -115);
+    context.drawImage(player_image, 0, -(player_h));
     context.restore();
     
     if (screen < 0){
@@ -127,20 +145,8 @@ function draw() {
     switch (screen) {
       case 1:
         context.fillStyle = "#000000";
-        context.fillRect(200, 500, 400, 50);
-        if(player_x > 100 && player_x < 400 && player_y > 500-115){
-          console.log("collision");
-          if(player_xvel > 0){
-            player_x = 100;
-          }
-          if(player_xvel < 0){
-            player_x = 400;
-          }
-          if(player_yvel > 0){
-            player_y = 500-115;
-            ground = true;
-          }
-        }
+        context.fillRect(200, 500, 400, 40);
+        collobs(200, 500, 400, 40);
         break;
     }
 
