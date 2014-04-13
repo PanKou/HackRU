@@ -100,9 +100,11 @@ var update = function () {
 function collobs(x, y, w, h){
     
     if(!(player_x < x -player_w || player_x > (x+w))){
-      if(player_y > y - h){
+        if (player_y > y) {
         player_y = y;
+        player_yvel = 0;
         ground = true;
+    }
       }
       if(player_y < y - h){
         ground = false;
@@ -111,7 +113,6 @@ function collobs(x, y, w, h){
         ground = true;
       }
     }
- }
 
 function draw() {
     var c = document.getElementById("canvas");
