@@ -24,15 +24,15 @@ function scaninput(e) {
     }
     switch (keypress) {
     case 38: //Up key
-        console.log("you pressed up");
+//        console.log("you pressed up");
         jump = true;
         break;
     case 39: //Right key
-        console.log("you pressed right");
+//        console.log("you pressed right");
         moveright = true;
         break;
     case 37: //Left Key
-        console.log("you pressed left");
+//        console.log("you pressed left");
         moveleft = true;
         break;
     }
@@ -102,7 +102,7 @@ var update = function () {
 
 function collobs(x, y, w, h){
     
-    if(player_x > x -player_w && player_x < (x+w)){
+    if(player_x > x - player_w && player_x < (x+w)){
         if (player_y > y) {
         player_y = y;
         player_yvel = 0;
@@ -160,6 +160,13 @@ function draw() {
         collobs(200, 500, 400, 40);
         context.fillRect(250, 450, 100, 50);
         collobs(250, 450, 100, 50);
+        break;
+      case 2:
+        context.fillStyle = "#000000";
+        context.fillRect(200, 500, 400, 40);
+        collobs(200, 500, 400, 40);
+        context.fillRect(250, 450, 350, 50);
+        collobs(250, 450, 350, 50);
         break;
     }
 
