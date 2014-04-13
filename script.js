@@ -113,19 +113,18 @@ function draw() {
     context.drawImage(player_image, 0, -115);
     context.restore();
     
-    if (screen <0){
+    if (screen < 0){
     context.font = "24px Arial";
     context.fillStyle = "rgba(255, 255, 255, 0.8)";
     context.fillText("Wrong Way! Go right!", 300, 300);
+    screen = -1;
     }
     if (screen === 0){
     context.font = "24px Arial";
     context.fillStyle = "rgba(255, 255, 255, 0.8)";
     context.fillText("Go right!", 300, 300);
     }
-    if (screen > 0){
-    
-    }
+
 }
  
 function run() {
