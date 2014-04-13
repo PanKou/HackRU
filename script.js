@@ -1,5 +1,5 @@
-var dt = 1 / 10;
-var fps = 100;
+var dt = 1 / 100;
+var fps = 1000;
  
 var player_image = new Image();
 player_image.src = "Test Sprite.png";
