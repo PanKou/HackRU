@@ -128,11 +128,7 @@ function collobs(x, y, w, h){
 function coin(x, y, w, h){
   if(player_x > x - player_w && player_x < (x+w)){
     coincon = true;
-    moveright = false;
-    moveleft = false;
-    jump = false;
     alert("Thanks for testing out my broken physics engine!");
-    
   }
 }
 function draw() {
