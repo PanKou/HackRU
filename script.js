@@ -153,18 +153,24 @@ function draw() {
     context.drawImage(player_image, 0, -(player_h));
     context.restore();
     
-    if (screen < 0){
-    context.font = "24px Arial";
-    context.fillStyle = "rgba(255, 255, 255, 0.8)";
-    context.fillText("Wrong Way! Go right!", 300, 300);
+    if (screen < -1){
     screen = -1;
-    }    if (screen === 0){
-
-    context.font = "24px Arial";
-    context.fillStyle = "rgba(255, 255, 255, 0.8)";
-    context.fillText("Use the arrow keys to go right!", 300, 300);
     }
+    if (screen > 4){
+    screen = 4;
+    }
+    
     switch (screen) {
+      case -1:
+        context.font = "24px Arial";
+        context.fillStyle = "rgba(255, 255, 255, 0.8)";
+        context.fillText("Wrong Way! Go right!", 300, 300);
+        break;    
+      case 0:
+        context.font = "24px Arial";
+        context.fillStyle = "rgba(255, 255, 255, 0.8)";
+        context.fillText("Use the arrow keys to go right!", 300, 300);
+        break;
       case 1:
         context.fillStyle = "#000000";
         context.fillRect(200, 500, 400, 40);
@@ -191,12 +197,16 @@ function draw() {
           context.font = "24px Arial";
           context.fillStyle = "rgba(255, 255, 255, 0.8)";
           context.fillText("Climb the tower to grab the coin!", 300, 300);
-    
           context.fillStyle = "#ffff00";
           context.fillRect(525, 200, 50, 50);
           coin(525, 200, 50, 50);
-        break;
-        }
+          }
+          break;
+          
+        case 4:
+         context.font = "24px Arial";
+         context.fillStyle = "rgba(255, 255, 255, 0.8)";
+         context.fillText("There is nothing else here for now.", 300, 300);
         
         break;
     }
